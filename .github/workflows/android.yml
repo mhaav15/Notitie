@@ -57,5 +57,5 @@ jobs:
             Installeer `Notitie.apk` op de Xiaomi 15T Pro.
 
             Widgets: **Notitie** (lijst) en **Notitieblok** (vrij schrijven).
-            Zelf het formaat kiezen: widget lang indrukken → hendels slepen
-            (2×2 … 7×4).
+            Standaard een volle startscherm-pagina. Blijft het klein:
+            HyperOS-raster op max (7×4 of 4×6), oud widget weg, opnieuw toevoegen.

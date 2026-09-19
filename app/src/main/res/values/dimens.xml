@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- 70×n − 30: 2 cells = 110dp. Default placement still targets 7×4. -->
-    <dimen name="widget_min_width">110dp</dimen>
-    <dimen name="widget_min_height">110dp</dimen>
+    <!-- 70 × n − 30. HyperOS uses minWidth/minHeight as the first placement
+         size and often ignores targetCell*. Keep mins at a full page so the
+         widget is not dropped as 2×2. Launchers clamp to the current grid. -->
+    <dimen name="widget_full_width">460dp</dimen>
+    <dimen name="widget_full_height">390dp</dimen>
     <dimen name="widget_min_resize_width">110dp</dimen>
     <dimen name="widget_min_resize_height">110dp</dimen>
 </resources>

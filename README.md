@@ -1,47 +1,40 @@
 # Notitie
 
-Minimal Android app with **two home-screen widgets**. Made for a **Xiaomi 15T Pro** (grid 7 columns × 4 rows), but **you choose the size**.
-
-Alles blijft **lokaal** op het toestel.
-
-## Twee widgets
+Minimal Android app with **two fullscreen home-screen widgets**. Notes stay **on the device**.
 
 | Picker-naam | Wat het is |
 | --- | --- |
 | **Notitie** | Lijst herinneringen: snel toevoegen, scrollen, gedaan / verwijderen |
-| **Notitieblok** | Leeg notitieblok: vrij typen (meerdere regels), automatisch opslaan |
+| **Notitieblok** | Leeg papier: vrij typen (meerdere regels), automatisch opslaan |
 
-Beide zijn **vrij te vergroten en verkleinen**. Aanbevolen startmaat is **7×4** (één startscherm-pagina). Kleinere maten werken ook, bijvoorbeeld **2×2**, **4×2**, **4×4**, **5×4**, en alles wat de launcher tussen min en max toestaat.
+Beide widgets vragen bij plaatsing een **volledige pagina** (`minWidth`/`minHeight` ≈ 7×6 cellen). HyperOS gebruikt die minimummaat als eerste formaat — daarom landt het niet meer als 2×2. Past het raster niet, dan klempt de launcher naar het grootste beschikbare vak (bijv. 4×6 of 7×4).
 
-Android `RemoteViews` kan geen betrouwbare `EditText` in een widget zetten. Daarom:
+Android `RemoteViews` kan geen betrouwbare `EditText` in een widget. Daarom:
 
-- **Notitie:** tik op het invoerveld → compact overlay → typ + **Opslaan**
-- **Notitieblok:** tik op het papier → fullscreen notitieblok dat er hetzelfde uitziet → typ vrij; tekst staat daarna weer op het widget
+- **Notitie:** tik op het invoerveld → overlay → typ + **Opslaan**
+- **Notitieblok:** tik op het papier → fullscreen blad → typ vrij; tekst komt terug op het widget
 
-## Formaat kiezen (Xiaomi / HyperOS / MIUI)
+## Xiaomi / HyperOS
 
 1. Installeer `Notitie.apk` en open **Notitie** één keer.
-2. Houd een leeg startscherm **ingedrukt**.
-3. Tik op **Widgets**.
-4. Kies **Notitie** of **Notitieblok** en sleep het op het scherm.
-5. **Houd het widget ingedrukt** tot de **hendels** (hoekpunten) verschijnen.
-6. **Sleep de hendels** naar het formaat dat je wilt — 2×2 tot een volledige pagina (7×4).
+2. Zet het **startscherm-raster zo groot mogelijk**: lang indrukken op het startscherm → instellingen / **Rasterindeling**. Voor een volle pagina: **7×4** of **4×6**, niet een klein 4-koloms raster als je 7×4 wilt.
+3. **Verwijder** een eerder geplaatst klein (2×2) widget — een update verandert de maat van een bestaand widget niet.
+4. Lang indrukken → **Widgets** → **Notitie** of **Notitieblok** → op een **lege pagina** zetten.
+5. Het widget moet de pagina vullen. Blijft het klein: raster op max, widget weghalen, opnieuw toevoegen.
 
-Als het widget in de kiezer ontbreekt: Instellingen → Apps → **Notitie** → niet beperken; open de app nog eens.
+Slepen om te verkleinen kan als HyperOS hendels toont; dat is optioneel.
 
 ## Download
 
-- **GitHub Release:** https://github.com/mhaav15/Notitie/releases/tag/v1.1.0 (`Notitie.apk`)
+- **GitHub Release:** https://github.com/mhaav15/Notitie/releases/tag/v1.2.0 (`Notitie.apk`)
 - **Actions** artifact op de `Android` workflow
-- Lokaal: `./gradlew assembleRelease` → `app/build/outputs/apk/release/`
+- Lokaal: `./gradlew assembleRelease`
 
 ## Build
 
-JDK 17 en Android SDK (compile SDK 35).
+JDK 17, compile SDK 35.
 
 ```bash
 export ANDROID_HOME=/path/to/android-sdk
 ./gradlew testDebugUnitTest assembleRelease
 ```
-
-De release-keystore staat in `app/keystore/notitie-release.jks`. Vervang die als je onder een eigen identiteit publiceert.
