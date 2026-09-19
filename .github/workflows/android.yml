@@ -56,4 +56,6 @@ jobs:
           body: |
             Installeer `Notitie.apk` op de Xiaomi 15T Pro.
 
-            Daarna: startscherm lang indrukken → **Widgets** → **Notitie** → vergroot tot **7×4**.
+            Widgets: **Notitie** (lijst) en **Notitieblok** (vrij schrijven).
+            Zelf het formaat kiezen: widget lang indrukken → hendels slepen
+            (2×2 … 7×4).

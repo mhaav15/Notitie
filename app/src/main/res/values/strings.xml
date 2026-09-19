@@ -2,7 +2,11 @@
 <resources>
     <string name="app_name">Notitie</string>
     <string name="widget_name">Notitie</string>
-    <string name="widget_description">Volledig startscherm met herinneringen. Typ, bekijk en vink notities af.</string>
+    <string name="widget_description">Lijst met herinneringen. Zelf het formaat kiezen, tot een volledig scherm (7×4).</string>
+    <string name="notepad_widget_name">Notitieblok</string>
+    <string name="notepad_widget_description">Leeg notitieblok. Typ vrij, slaat automatisch op. Zelf het formaat kiezen.</string>
+    <string name="notepad_hint">Tik om te schrijven…</string>
+    <string name="notepad_autosave">Wordt automatisch opgeslagen</string>
     <string name="quick_add_hint">Typ een herinnering…</string>
     <string name="save">Opslaan</string>
     <string name="cancel">Annuleren</string>
@@ -15,8 +19,8 @@
     <string name="empty_notes">Nog geen notities. Typ er hierboven een.</string>
     <string name="empty_widget">Nog geen notities.\nTik hierboven om er een toe te voegen.</string>
     <string name="empty_note">Typ eerst een herinnering.</string>
-    <string name="how_to_title">Widget op Xiaomi / HyperOS</string>
-    <string name="how_to_body">1. Houd een leeg startscherm ingedrukt\n2. Tik op Widgets\n3. Kies Notitie\n4. Sleep het widget naar een leeg scherm\n5. Houd het widget ingedrukt en vergroot het tot 7×4 (volledig scherm)\n\nTik in het widget op het invoerveld, typ je herinnering en tik op Opslaan. Alle notities blijven in hetzelfde widget staan.</string>
+    <string name="how_to_title">Widgets op Xiaomi / HyperOS</string>
+    <string name="how_to_body">1. Houd een leeg startscherm ingedrukt\n2. Tik op Widgets\n3. Kies Notitie (lijst) of Notitieblok (vrij schrijven)\n4. Sleep het widget naar het scherm\n5. Houd het widget ingedrukt → sleep de hendels naar het formaat dat je wilt (2×2, 4×2, 4×4, 5×4, 7×4 of alles daartussen)\n\nNotitie: tik op het invoerveld, typ een herinnering, tik op Opslaan.\nNotitieblok: tik op het papier, typ vrij (meerdere regels). Het blok slaat automatisch op.</string>
     <string name="notes_heading">Notities</string>
     <string name="quick_add_title">Nieuwe herinnering</string>
     <plurals name="note_count">

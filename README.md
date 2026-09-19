@@ -1,44 +1,47 @@
 # Notitie
 
-Minimal Android app with a **fullscreen home-screen widget** for reminders. Built for a **Xiaomi 15T Pro** launcher grid of **7 columns × 4 rows**. The widget is the primary UI: swipe to a home screen filled with Notitie, type a reminder, and see every note in the same widget.
+Minimal Android app with **two home-screen widgets**. Made for a **Xiaomi 15T Pro** (grid 7 columns × 4 rows), but **you choose the size**.
 
-Notes are stored **only on the device** (`notes.json` in the app’s private files).
+Alles blijft **lokaal** op het toestel.
 
-## Widget (7×4)
+## Twee widgets
 
-The app widget requests **7×4 cells** (`targetCellWidth=7`, `targetCellHeight=4`) and can be resized.
+| Picker-naam | Wat het is |
+| --- | --- |
+| **Notitie** | Lijst herinneringen: snel toevoegen, scrollen, gedaan / verwijderen |
+| **Notitieblok** | Leeg notitieblok: vrij typen (meerdere regels), automatisch opslaan |
 
-Android widgets cannot host a reliable `EditText` inside `RemoteViews`. Tapping **Typ een herinnering…** / **Opslaan** opens a compact overlay: type the reminder and save with one tap. The scrollable list of **all notes** stays in the widget, with done (○ / ✓) and **Verwijderen** on each row.
+Beide zijn **vrij te vergroten en verkleinen**. Aanbevolen startmaat is **7×4** (één startscherm-pagina). Kleinere maten werken ook, bijvoorbeeld **2×2**, **4×2**, **4×4**, **5×4**, en alles wat de launcher tussen min en max toestaat.
 
-## Xiaomi / HyperOS / MIUI — add the widget
+Android `RemoteViews` kan geen betrouwbare `EditText` in een widget zetten. Daarom:
 
-1. Install `Notitie.apk` and open **Notitie** once (Android requirement before some launchers list the widget).
-2. Go to an **empty home-screen page** (or add a new page).
-3. **Long-press** an empty area of the home screen.
-4. Tap **Widgets**.
-5. Find **Notitie** and tap / drag it onto that page.
-6. **Long-press the widget** and **resize** it until it fills the page (**7×4** on a 7-column × 4-row grid).
-7. Tap the input bar, type a reminder, tap **Opslaan**. All notes appear in the same widget; scroll if the list is long. Tap ○/✓ to mark done, **Verwijderen** to delete.
+- **Notitie:** tik op het invoerveld → compact overlay → typ + **Opslaan**
+- **Notitieblok:** tik op het papier → fullscreen notitieblok dat er hetzelfde uitziet → typ vrij; tekst staat daarna weer op het widget
 
-If the widget is missing from the picker: Settings → Apps → **Notitie** → make sure the app is not restricted; open the app once more and try Widgets again.
+## Formaat kiezen (Xiaomi / HyperOS / MIUI)
+
+1. Installeer `Notitie.apk` en open **Notitie** één keer.
+2. Houd een leeg startscherm **ingedrukt**.
+3. Tik op **Widgets**.
+4. Kies **Notitie** of **Notitieblok** en sleep het op het scherm.
+5. **Houd het widget ingedrukt** tot de **hendels** (hoekpunten) verschijnen.
+6. **Sleep de hendels** naar het formaat dat je wilt — 2×2 tot een volledige pagina (7×4).
+
+Als het widget in de kiezer ontbreekt: Instellingen → Apps → **Notitie** → niet beperken; open de app nog eens.
 
 ## Download
 
-- **GitHub Release:** https://github.com/mhaav15/Notitie/releases/tag/v1.0.0 (`Notitie.apk`)
-- **Actions** artifact on the `Android` workflow
-- Build locally: `./gradlew assembleRelease` → `app/build/outputs/apk/release/`
+- **GitHub Release:** https://github.com/mhaav15/Notitie/releases/tag/v1.1.0 (`Notitie.apk`)
+- **Actions** artifact op de `Android` workflow
+- Lokaal: `./gradlew assembleRelease` → `app/build/outputs/apk/release/`
 
 ## Build
 
-Requires JDK 17 and the Android SDK (compile SDK 35).
+JDK 17 en Android SDK (compile SDK 35).
 
 ```bash
 export ANDROID_HOME=/path/to/android-sdk
 ./gradlew testDebugUnitTest assembleRelease
 ```
 
-The release keystore lives at `app/keystore/notitie-release.jks` so a personal installable APK can be built without extra secrets. Replace it if you publish under your own identity.
-
-## Why native Kotlin (not Flutter)
-
-Flutter `home_widget` cannot offer reliable in-widget text entry. This project uses a **Kotlin App Widget + RemoteViews** list (`ListView` / `RemoteViewsService`) and a one-tap **QuickAdd** overlay for typing.
+De release-keystore staat in `app/keystore/notitie-release.jks`. Vervang die als je onder een eigen identiteit publiceert.

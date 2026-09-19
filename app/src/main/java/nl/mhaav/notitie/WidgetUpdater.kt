@@ -7,13 +7,35 @@ import android.content.Intent
 
 object WidgetUpdater {
     fun refreshAll(context: Context) {
+        refreshComponent(context, NotitieAppWidgetProvider::class.java) { manager, ids ->
+            manager.notifyAppWidgetViewDataChanged(ids, R.id.note_list)
+        }
+    }
+
+    fun refreshNotepad(context: Context, widgetId: Int? = null) {
+        refreshComponent(
+            context,
+            NotitieblokAppWidgetProvider::class.java,
+            widgetId,
+        )
+    }
+
+    private fun refreshComponent(
+        context: Context,
+        provider: Class<*>,
+        widgetId: Int? = null,
+        extra: ((AppWidgetManager, IntArray) -> Unit)? = null,
+    ) {
         val appContext = context.applicationContext
         val manager = AppWidgetManager.getInstance(appContext)
-        val component = ComponentName(appContext, NotitieAppWidgetProvider::class.java)
-        val ids = manager.getAppWidgetIds(component)
+        val ids = if (widgetId != null) {
+            intArrayOf(widgetId)
+        } else {
+            manager.getAppWidgetIds(ComponentName(appContext, provider))
+        }
         if (ids.isEmpty()) return
-        manager.notifyAppWidgetViewDataChanged(ids, R.id.note_list)
-        val intent = Intent(appContext, NotitieAppWidgetProvider::class.java).apply {
+        extra?.invoke(manager, ids)
+        val intent = Intent(appContext, provider).apply {
             action = AppWidgetManager.ACTION_APPWIDGET_UPDATE
             putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids)
         }

@@ -16,4 +16,8 @@
     <color name="widget_danger">#FF9B1C1C</color>
     <color name="launcher_bg">#FF1F4B99</color>
     <color name="scrim">#99000000</color>
+    <color name="paper">#FFFBF4E4</color>
+    <color name="paper_text">#FF1C160E</color>
+    <color name="paper_hint">#FF6B5E4A</color>
+    <color name="paper_stroke">#332A2118</color>
 </resources>

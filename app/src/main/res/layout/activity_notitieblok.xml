@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/notepad_paper_fullscreen"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:paddingStart="20dp"
+    android:paddingTop="20dp"
+    android:paddingEnd="20dp"
+    android:paddingBottom="12dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/notepad_widget_name"
+        android:textColor="@color/paper_hint"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/input"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:gravity="top|start"
+        android:hint="@string/notepad_hint"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine|textCapSentences|textAutoCorrect"
+        android:lineSpacingExtra="4dp"
+        android:overScrollMode="ifContentScrolls"
+        android:padding="0dp"
+        android:scrollbars="vertical"
+        android:textColor="@color/paper_text"
+        android:textColorHint="@color/paper_hint"
+        android:textSize="17sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="4dp"
+        android:text="@string/notepad_autosave"
+        android:textColor="@color/paper_hint"
+        android:textSize="12sp" />
+</LinearLayout>
