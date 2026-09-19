@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Notitie</string>
+    <string name="widget_name">Notitie</string>
+    <string name="widget_description">Lijst met herinneringen, standaard een volledig startscherm.</string>
+    <string name="notepad_widget_name">Notitieblok</string>
+    <string name="notepad_widget_description">Leeg notitieblok voor een volledig startscherm. Typ vrij, slaat automatisch op.</string>
+    <string name="notepad_hint">Tik om te schrijven…</string>
+    <string name="notepad_autosave">Wordt automatisch opgeslagen</string>
+    <string name="quick_add_hint">Typ een herinnering…</string>
+    <string name="save">Opslaan</string>
+    <string name="cancel">Annuleren</string>
+    <string name="add">Toevoegen</string>
+    <string name="delete">Verwijderen</string>
+    <string name="mark_done">Markeer als gedaan</string>
+    <string name="mark_open">Markeer als open</string>
+    <string name="done_mark">✓</string>
+    <string name="open_mark">○</string>
+    <string name="empty_notes">Nog geen notities. Typ er hierboven een.</string>
+    <string name="empty_widget">Nog geen notities.\nTik hierboven om er een toe te voegen.</string>
+    <string name="empty_note">Typ eerst een herinnering.</string>
+    <string name="how_to_title">Widgets op Xiaomi / HyperOS</string>
+    <string name="how_to_body">1. Zet het startscherm-raster op het maximum (HyperOS: lang indrukken → Instellingen / Raster, bijv. 7×4 of 4×6)\n2. Verwijder een oud klein widget als dat er nog staat\n3. Houd een leeg scherm ingedrukt → Widgets\n4. Kies Notitie (lijst) of Notitieblok (vrij schrijven)\n5. Het widget vult de pagina. Blijft het klein: raster groter zetten en opnieuw toevoegen.\n\nNotitie: tik op het invoerveld, typ, tik op Opslaan.\nNotitieblok: tik op het papier en typ vrij; het slaat automatisch op.</string>
+    <string name="notes_heading">Notities</string>
+    <string name="quick_add_title">Nieuwe herinnering</string>
+    <plurals name="note_count">
+        <item quantity="one">%d notitie</item>
+        <item quantity="other">%d notities</item>
+    </plurals>
+</resources>

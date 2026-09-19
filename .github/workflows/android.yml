@@ -1,0 +1,61 @@
+name: Android
+
+on:
+  push:
+    branches: [main, "cursor/**"]
+    tags: ["v*"]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: gradle
+
+      - name: Accept Android licenses
+        run: |
+          yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses >/dev/null || true
+          yes | "$ANDROID_HOME/cmdline-tools/$(ls "$ANDROID_HOME/cmdline-tools" | tail -n1)/bin/sdkmanager" --licenses >/dev/null || true
+
+      - name: Unit tests
+        run: ./gradlew --no-daemon testDebugUnitTest
+
+      - name: Release APK
+        run: ./gradlew --no-daemon assembleRelease
+
+      - name: Name APK
+        run: |
+          mkdir -p dist
+          cp app/build/outputs/apk/release/*.apk dist/Notitie.apk
+          ls -lh dist/Notitie.apk
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: Notitie
+          path: dist/Notitie.apk
+
+      - name: GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          name: Notitie ${{ github.ref_name }}
+          files: dist/Notitie.apk
+          generate_release_notes: true
+          body: |
+            Installeer `Notitie.apk` op de Xiaomi 15T Pro.
+
+            Widgets: **Notitie** (lijst) en **Notitieblok** (vrij schrijven).
+            Standaard een volle startscherm-pagina. Blijft het klein:
+            HyperOS-raster op max (7×4 of 4×6), oud widget weg, opnieuw toevoegen.
