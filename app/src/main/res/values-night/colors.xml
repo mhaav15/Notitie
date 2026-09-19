@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg">#FF121212</color>
+    <color name="bg_elevated">#FF1E1E1E</color>
+    <color name="text">#FFF5F5F5</color>
+    <color name="text_muted">#FFC8C8C8</color>
+    <color name="accent">#FF8AB4F8</color>
+    <color name="accent_on">#FF0B1220</color>
+    <color name="danger">#FFFF8A80</color>
+    <color name="stroke">#33FFFFFF</color>
+    <color name="widget_bg">#FF121212</color>
+    <color name="widget_card">#FF1E1E1E</color>
+    <color name="widget_text">#FFF5F5F5</color>
+    <color name="widget_text_muted">#FFBDBDBD</color>
+    <color name="widget_accent">#FF8AB4F8</color>
+    <color name="widget_danger">#FFFF8A80</color>
+    <color name="launcher_bg">#FF8AB4F8</color>
+    <color name="scrim">#B3000000</color>
+</resources>

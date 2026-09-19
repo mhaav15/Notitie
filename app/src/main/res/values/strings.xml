@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Notitie</string>
+    <string name="widget_name">Notitie</string>
+    <string name="widget_description">Volledig startscherm met herinneringen. Typ, bekijk en vink notities af.</string>
+    <string name="quick_add_hint">Typ een herinnering…</string>
+    <string name="save">Opslaan</string>
+    <string name="cancel">Annuleren</string>
+    <string name="add">Toevoegen</string>
+    <string name="delete">Verwijderen</string>
+    <string name="mark_done">Markeer als gedaan</string>
+    <string name="mark_open">Markeer als open</string>
+    <string name="done_mark">✓</string>
+    <string name="open_mark">○</string>
+    <string name="empty_notes">Nog geen notities. Typ er hierboven een.</string>
+    <string name="empty_widget">Nog geen notities.\nTik hierboven om er een toe te voegen.</string>
+    <string name="empty_note">Typ eerst een herinnering.</string>
+    <string name="how_to_title">Widget op Xiaomi / HyperOS</string>
+    <string name="how_to_body">1. Houd een leeg startscherm ingedrukt\n2. Tik op Widgets\n3. Kies Notitie\n4. Sleep het widget naar een leeg scherm\n5. Houd het widget ingedrukt en vergroot het tot 7×4 (volledig scherm)\n\nTik in het widget op het invoerveld, typ je herinnering en tik op Opslaan. Alle notities blijven in hetzelfde widget staan.</string>
+    <string name="notes_heading">Notities</string>
+    <string name="quick_add_title">Nieuwe herinnering</string>
+    <plurals name="note_count">
+        <item quantity="one">%d notitie</item>
+        <item quantity="other">%d notities</item>
+    </plurals>
+</resources>
