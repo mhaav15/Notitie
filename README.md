@@ -24,7 +24,7 @@ If the widget is missing from the picker: Settings → Apps → **Notitie** → 
 
 ## Download
 
-- **GitHub Release** on this repo (APK attached as `Notitie.apk`)
+- **GitHub Release:** https://github.com/mhaav15/Notitie/releases/tag/v1.0.0 (`Notitie.apk`)
 - **Actions** artifact on the `Android` workflow
 - Build locally: `./gradlew assembleRelease` → `app/build/outputs/apk/release/`
 
